@@ -1,59 +1,68 @@
 # P4YHU3 (PAYHUB) — The Privacy‑First Payment Agent
 
-PAYHUB é um hub de pagamentos com abstração de conta que unifica PIX, Cartão, Stablecoins e XRPL (XRP), priorizando privacidade, segurança e escalabilidade. Este repositório contém o MVP focado em pagamentos com Escrow na XRP Ledger, preparado para o Vega House Hackathon.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Node.js](https://img.shields.io/badge/node.js-18%2B-green.svg)
+![Express.js](https://img.shields.io/badge/express.js-4.x-orange.svg)
+![XRPL](https://img.shields.io/badge/XRPL-stable-brightgreen.svg)
 
-## Visão
-- Privacidade em primeiro lugar: nada sensível on-chain; apenas hashes/indicadores.
-- Abstração de pagamentos: cliente paga em R$ (PIX) ou cripto; liquidação ocorre na XRPL.
-- Hub inteligente: arbitra provedores e taxas, oferecendo melhor rota de pagamento.
+PAYHUB é um hub de pagamentos com abstração de conta que unifica PIX, Cartão, Stablecoins e XRPL (XRP), priorizando privacidade, segurança e escalabilidade. Este repositório contém o MVP focado em pagamentos com Escrow na XRP Ledger.
 
-## Trilha do Hackathon
-- Trilha sugerida: XRPL (pagamentos + Escrow + abstração de adoção).
-- Entregáveis: código público (MIT), demo em vídeo (≤5 min), URL pública, README detalhado.
+## Sobre o Projeto
 
-## Funcionalidades do MVP
-- Criação de Escrow na XRPL (XRP por padrão; suporte a IOUs/Stablecoins em fase seguinte).
-- Finalização de Escrow após prova de serviço/entrega (tempo/condição).
-- API simples pronta para embedar um widget de checkout.
+PAYHUB foi desenvolvido com a visão de criar uma camada de abstração de pagamentos que simplifica a interação com múltiplas formas de liquidação, mantendo a privacidade do usuário como pilar central.
 
-## Arquitetura (MVP)
-- `API Gateway (Express)`: recebe pedidos, expõe endpoints de Escrow.
-- `XRPL Client (xrpl.js)`: conecta Testnet/Devnet, assina e envia transações.
-- `Serviço Off‑Chain`: valida evento de entrega (webhook/log) antes de finalizar Escrow.
+- **Privacidade em Primeiro Lugar:** Nenhuma informação sensível é armazenada on-chain. Apenas hashes e indicadores são utilizados.
+- **Abstração de Pagamentos:** Permite que clientes paguem em Reais (PIX) ou criptomoedas, com a liquidação ocorrendo de forma transparente na XRP Ledger.
+- **Hub Inteligente:** O sistema é projetado para arbitrar provedores e taxas, otimizando a rota de pagamento para eficiência e baixo custo.
 
-## Endpoints (propostos)
-- `POST /escrow/create` — cria um Escrow na XRPL
-  - body: `{ destination, amount_xrp, finish_after_seconds }`
-  - retorno: `{ txHash, sequence, owner }`
-- `POST /escrow/finish` — finaliza um Escrow (após tempo/condição)
-  - body: `{ offerSequence, owner }`
-  - retorno: `{ txHash }`
-- `GET /health` — status do serviço
+## Começando
 
-## Fluxo XRPL (simplificado)
-1. Comércio envia pedido com destino e valor.
-2. PAYHUB cria Escrow (`EscrowCreate`) a partir da conta operadora.
-3. Serviço é validado off‑chain; PAYHUB dispara `EscrowFinish`.
+Para executar o projeto localmente, siga os passos abaixo.
 
-## Como rodar
-1. Pré‑requisitos: Node.js 18+, npm, acesso à internet.
-2. Crie o arquivo `.env` com base em `.env.example`.
-3. Instale dependências e inicie:
-   ```bash
-   npm install
-   npm run dev
+### Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- npm
+
+### Instalação
+
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/payhub.git
    ```
-4. Acesse `http://localhost:3000/health`.
+2. Instale as dependências:
+   ```sh
+   npm install
+   ```
+3. Crie um arquivo `.env` a partir do `.env.example` e preencha as variáveis de ambiente necessárias.
 
-## Variáveis de Ambiente
-- `XRPL_SERVER_URL` — WebSocket do nó (ex.: `wss://s.altnet.rippletest.net:51233`).
-- `PAYHUB_OPERATOR_SEED` — seed da conta operadora (apenas para Testnet em desenvolvimento).
-- `PORT` — porta do servidor (default 3000).
+## Uso
 
-## Próximos Passos (além do MVP)
-- Suporte a IOUs/Stablecoins (RLUSD) com trustline e issuer configurável.
-- Integração PIX/off‑ramp para funding automático do Escrow.
-- Widget de checkout e painel de reconciliação.
+Para iniciar o servidor de desenvolvimento, execute:
+
+```bash
+npm run dev
+```
+
+O servidor estará disponível em `http://localhost:3000`. Você pode verificar o status do serviço acessando `http://localhost:3000/health`.
+
+### Endpoints da API
+
+- `GET /health`: Verifica o status do serviço.
+- `POST /escrow/create`: Cria um Escrow em XRP.
+- `POST /escrow/finish`: Finaliza um Escrow.
+- `POST /xrpl/setup`: Configura contas, trustlines e emissão de RLUSD na Testnet.
+- `POST /escrow/rlusd/create`: Cria um Escrow de RLUSD (ou fallback para Payment).
+- `POST /escrow/rlusd/finish`: Finaliza um Escrow de RLUSD.
+
+Para exemplos detalhados de `curl`, consulte a versão anterior deste README.
+
+## Roadmap
+
+- [ ] Suporte completo a IOUs/Stablecoins (RLUSD) com `trustline` e `issuer` configuráveis.
+- [ ] Integração com PIX e provedores de off-ramp para funding automático do Escrow.
+- [ ] Desenvolvimento de um widget de checkout e um painel de reconciliação.
 
 ## Licença
-MIT — uso aberto para o hackathon e além.
+
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
