@@ -1,0 +1,23 @@
+{
+  "name": "payhub-(p4yhu3)",
+  "version": "1.0.0",
+  "description": "PAYHUB é um hub de pagamentos com abstração de conta que unifica PIX, Cartão, Stablecoins e XRPL (XRP), priorizando privacidade, segurança e escalabilidade. Este repositório contém o MVP focado em pagamentos com Escrow na XRP Ledger, preparado para o Vega House Hackathon.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
+    "xrpl": "^4.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
