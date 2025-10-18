@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "./theme-toggle"
 
 export function Header() {
   return (
@@ -13,22 +14,28 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-foreground">
-            Payment
+          <Link href="/payment" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+            Pagamento
           </Link>
           <Link href="/merchant" className="text-sm font-medium text-muted-foreground hover:text-foreground">
-            Merchant Dashboard
+            Dashboard do Lojista
           </Link>
-          <Link href="/docs" className="text-sm font-medium text-muted-foreground hover:text-foreground">
-            Documentation
+          <Link href="/demo" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+            Demonstração
+          </Link>
+          <Link href="/documentation" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+            Documentação
           </Link>
         </nav>
 
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm">
-            Connect Wallet
+          <ThemeToggle />
+          <Button variant="ghost" size="sm" asChild>
+            <Link href="/payment">Conectar Carteira</Link>
           </Button>
-          <Button size="sm">Get Started</Button>
+          <Button size="sm" asChild>
+            <Link href="/demo-simple">Começar</Link>
+          </Button>
         </div>
       </div>
     </header>
