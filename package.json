@@ -4,5 +4,9 @@
   "workspaces": [
     "backend",
     "payhub-frontend"
-  ]
+  ],
+  "scripts": {
+    "vercel-build": "pnpm -C payhub-frontend run build",
+    "vercel-dev": "pnpm -C payhub-frontend run dev"
+  }
 }
