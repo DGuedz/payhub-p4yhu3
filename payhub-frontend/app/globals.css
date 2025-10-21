@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,25 +40,39 @@
 }
 
 .dark {
-  --background: #0a0e1a;
-  --foreground: #ffffff;
-  --card: rgba(31, 41, 55, 0.8);
-  --card-foreground: #ffffff;
-  --popover: #111827;
-  --popover-foreground: #ffffff;
-  --primary: #00d4ff;
-  --primary-foreground: #ffffff;
-  --secondary: #0ea5e9;
-  --secondary-foreground: #ffffff;
-  --muted: #9ca3af;
-  --muted-foreground: #e5e7eb;
-  --accent: #00d4ff;
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: rgba(55, 65, 81, 0.6);
-  --input: #1f2937;
-  --ring: rgba(0, 212, 255, 0.3);
+  --background: #0B0F1A;
+  --foreground: #FFFFFF;
+  --card: rgba(18, 24, 41, 0.85);
+  --card-foreground: #FFFFFF;
+  --popover: #121829;
+  --popover-foreground: #FFFFFF;
+  --primary: #3E2A7E; /* Deep Digital Purple */
+  --primary-foreground: #FFFFFF;
+  --secondary: #22C55E; /* Neon Green */
+  --secondary-foreground: #0B0F1A;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: #CBD5E1;
+  --accent: #22D3EE; /* Cyan */
+  --accent-foreground: #0B0F1A;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #334155;
+  --input: #121829;
+  --ring: rgba(34, 211, 238, 0.35);
+  /* Brand Kit extras */
+  --brand-purple: #3E2A7E;
+  --accent-green: #22C55E;
+  --accent-cyan: #22D3EE;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-accent: var(--accent-cyan);
+  --bg-card: rgba(18, 24, 41, 0.75);
+  --bg-card-hover: rgba(18, 24, 41, 0.9);
+  --bg-tertiary: #1B2138;
+  --border-primary: #2f2756;
+  --border-accent: rgba(34, 211, 238, 0.4);
+  --shadow-glow: 0 0 20px rgba(34, 211, 238, 0.15);
   --chart-1: oklch(0.65 0.18 264);
   --chart-2: oklch(0.55 0.18 160);
   --chart-3: oklch(0.65 0.2 85);

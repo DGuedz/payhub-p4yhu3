@@ -1,5 +1,8 @@
 {
-  "/demo/page": "app/demo/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/xrpl-tools/page": "app/xrpl-tools/page.js",
+  "/documentation/page": "app/documentation/page.js",
+  "/payment/page": "app/payment/page.js",
   "/page": "app/page.js",
-  "/demo-simple/page": "app/demo-simple/page.js"
+  "/documentation/relatorio-xrpl-latam/page": "app/documentation/relatorio-xrpl-latam/page.js"
 }

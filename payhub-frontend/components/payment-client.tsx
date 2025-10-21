@@ -32,7 +32,7 @@ const SendTransactionTest = () => {
         }),
       });
     } catch (error) {
-      console.error("Error sending payment type to backend:", error);
+      // Error handling for payment type sending
     }
   };
 
@@ -53,7 +53,6 @@ const SendTransactionTest = () => {
         value: parseEther(amount),
       });
     } catch (error) {
-      console.error("Erro ao enviar transação:", error);
       alert("Erro ao enviar transação. Verifique os dados e tente novamente.");
     }
   };

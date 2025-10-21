@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PAYHUB - Tesouraria Ativa Minimalista">
+  <defs>
+    <style>
+      /* Paleta Minimalista - Apenas 3 cores principais */
+      .bg { fill: #ffffff; }
+      .primary { fill: #1a1a1a; }
+      .secondary { fill: #666666; }
+      .accent { fill: #0066cc; }
+      .border { stroke: #e5e5e5; stroke-width: 1; fill: none; }
+      .card { fill: #fafafa; stroke: #e5e5e5; stroke-width: 1; rx: 8; }
+      
+      /* Tipografia Consistente - Apenas 3 variações */
+      .title-main { 
+        fill: #1a1a1a; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 28px; 
+        font-weight: 600; 
+        text-anchor: middle; 
+      }
+      .title-section { 
+        fill: #1a1a1a; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 16px; 
+        font-weight: 600; 
+        text-anchor: middle; 
+      }
+      .text-body { 
+        fill: #666666; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 14px; 
+        font-weight: 400; 
+        text-anchor: middle; 
+      }
+      .text-small { 
+        fill: #666666; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 12px; 
+        font-weight: 400; 
+        text-anchor: middle; 
+      }
+      .text-accent { 
+        fill: #0066cc; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 14px; 
+        font-weight: 500; 
+        text-anchor: middle; 
+      }
+    </style>
+  </defs>
+
+  <!-- Background limpo -->
+  <rect class="bg" x="0" y="0" width="1200" height="800"/>
+  
+  <!-- Header minimalista -->
+  <text x="600" y="60" class="title-main">PAYHUB</text>
+  <text x="600" y="85" class="text-body">Tesouraria Ativa • Zero Desconto + Yield DeFi</text>
+  
+  <!-- Grid System: 4 cartões principais com espaçamento uniforme -->
+  <!-- Cartão 1: Soft-POS -->
+  <rect class="card" x="80" y="140" width="220" height="120"/>
+  <text x="190" y="170" class="title-section">Soft-POS</text>
+  <text x="190" y="195" class="text-body">Pagamento híbrido</text>
+  <text x="190" y="215" class="text-body">Cartão/PIX via celular</text>
+  <text x="190" y="240" class="text-small">Maquininha digital</text>
+  
+  <!-- Cartão 2: Tokenização -->
+  <rect class="card" x="320" y="140" width="220" height="120"/>
+  <text x="430" y="170" class="title-section">Tokenização</text>
+  <text x="430" y="195" class="text-body">Recebíveis → RCV-ID</text>
+  <text x="430" y="215" class="text-body">Capital à vista</text>
+  <text x="430" y="240" class="text-small">Colateral DeFi</text>
+  
+  <!-- Cartão 3: Escrow XRPL -->
+  <rect class="card" x="560" y="140" width="220" height="120"/>
+  <text x="670" y="170" class="title-section">Escrow XRPL</text>
+  <text x="670" y="195" class="text-body">Valor em RLUSD</text>
+  <text x="670" y="215" class="text-body">Validação NFT</text>
+  <text x="670" y="240" class="text-small">Segurança blockchain</text>
+  
+  <!-- Cartão 4: Liquidez -->
+  <rect class="card" x="800" y="140" width="220" height="120"/>
+  <text x="910" y="170" class="title-section">Liquidez</text>
+  <text x="910" y="195" class="text-body">100% do valor</text>
+  <text x="910" y="215" class="text-body">5-8% APY</text>
+  <text x="910" y="240" class="text-small">Renda automática</text>
+  
+  <!-- Fluxo minimalista -->
+  <line x1="300" y1="200" x2="320" y2="200" class="border"/>
+  <line x1="540" y1="200" x2="560" y2="200" class="border"/>
+  <line x1="780" y1="200" x2="800" y2="200" class="border"/>
+  
+  <!-- Setas simples -->
+  <polygon points="315,195 325,200 315,205" fill="#666666"/>
+  <polygon points="555,195 565,200 555,205" fill="#666666"/>
+  <polygon points="795,195 805,200 795,205" fill="#666666"/>
+  
+  <!-- Destaque de velocidade -->
+  <text x="600" y="300" class="text-accent">Liquidação: 3-5 segundos</text>
+  
+  <!-- Seção de benefícios minimalista -->
+  <rect class="card" x="80" y="360" width="1040" height="140"/>
+  <text x="600" y="390" class="title-section">Benefícios</text>
+  
+  <!-- Lista em duas colunas -->
+  <text x="300" y="420" class="text-body">• Zero desconto</text>
+  <text x="300" y="440" class="text-body">• Liquidez instantânea</text>
+  <text x="300" y="460" class="text-body">• Sem análise de crédito</text>
+  
+  <text x="900" y="420" class="text-body">• Yield automático 5-8%</text>
+  <text x="900" y="440" class="text-body">• Segurança blockchain</text>
+  <text x="900" y="460" class="text-body">• Auditoria transparente</text>
+  
+  <!-- Seção técnica minimalista -->
+  <rect class="card" x="80" y="540" width="1040" height="120"/>
+  <text x="600" y="570" class="title-section">Inovação Técnica</text>
+  
+  <text x="300" y="600" class="text-body">• Recebíveis como garantia</text>
+  <text x="300" y="620" class="text-body">• Smart contracts XRPL</text>
+  
+  <text x="900" y="600" class="text-body">• Validação automática</text>
+  <text x="900" y="620" class="text-body">• Finality criptográfica</text>
+  
+  <!-- Footer minimalista -->
+  <text x="600" y="720" class="text-small">PAYHUB • Built on XRPL • Hackathon Vega 2024</text>
+  <text x="600" y="740" class="text-small">Trilha Exploration: Financiamento Colateralizado</text>
+</svg>

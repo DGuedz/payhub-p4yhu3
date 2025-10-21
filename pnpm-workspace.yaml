@@ -1,3 +1,9 @@
 packages:
-  - 'backend'
-  - 'payhub-frontend'
+  - backend
+  - payhub-frontend
+  - mobile
+
+nodeLinker: hoisted
+
+onlyBuiltDependencies:
+  - sharp

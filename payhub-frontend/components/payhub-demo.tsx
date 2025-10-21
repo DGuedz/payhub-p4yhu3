@@ -24,7 +24,7 @@ interface PaymentFlow {
   escrowSequence?: number
 }
 
-export default function PayhubDemo() {
+export function PayhubDemo() {
   const [currentPhase, setCurrentPhase] = useState<"setup" | "payment" | "yield" | "completed">("setup")
   const [steps, setSteps] = useState<DemoStep[]>([
     {
@@ -93,7 +93,6 @@ export default function PayhubDemo() {
   const handleDefiAllocation = async () => {
     try {
       // Simulação local - removendo dependência do backend
-      console.log('Alocando rendimento DeFi...');
       
       setTimeout(() => {
         setDefiAllocation({
@@ -104,7 +103,6 @@ export default function PayhubDemo() {
         });
       }, 1500);
     } catch (error) {
-      console.error('Erro na alocação DeFi:', error);
       setDefiAllocation({
         protocol: 'mXRP_EVM_Sidechain',
         apy: 6.5,
@@ -149,7 +147,6 @@ export default function PayhubDemo() {
       
       if (stepId === "escrow") {
         // Simular criação de escrow com sequence
-        console.log('Processando pagamento híbrido...')
         await new Promise(resolve => setTimeout(resolve, 2000))
         setPaymentFlow(prev => ({ ...prev, escrowSequence: Math.floor(Math.random() * 1000000) }))
       } else {
@@ -185,11 +182,11 @@ export default function PayhubDemo() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case "completed":
-        return <CheckCircle2 className="h-5 w-5 text-green-500" />
+        return <CheckCircle2 className="h-5 w-5 text-primary" />
       case "running":
-        return <Clock className="h-5 w-5 text-blue-500 animate-pulse" />
+        return <Clock className="h-5 w-5 text-primary animate-pulse" />
       case "error":
-        return <AlertCircle className="h-5 w-5 text-red-500" />
+        return <AlertCircle className="h-5 w-5 text-destructive" />
       default:
         return <div className="h-5 w-5 rounded-full border-2 border-gray-300" />
     }
@@ -212,74 +209,64 @@ export default function PayhubDemo() {
 
   return (
     <div className="w-full max-w-4xl mx-auto p-6 space-y-6">
-      <Card className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+      <Card className="border">
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
-              <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                <Zap className="h-6 w-6 text-purple-400" />
-                PAYHUB - Agente de Gestão de Liquidez Ativa
-              </CardTitle>
-              <CardDescription className="text-purple-200">
+              <CardTitle className="text-foreground">PAYHUB - Agente de Gestão de Liquidez Ativa</CardTitle>
+              <CardDescription className="text-muted-foreground">
                 Demonstração do Fluxo de Pagamento Híbrido com Abstração Total
               </CardDescription>
             </div>
-            <Badge variant="outline" className="border-purple-400 text-purple-300">
-              MVP XRPL
-            </Badge>
+            <Badge variant="secondary">MVP XRPL</Badge>
           </div>
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Status da Fase Atual */}
-          <div className="bg-slate-800/50 rounded-lg p-4">
+          <div className="rounded border p-4">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-lg font-semibold">{getPhaseTitle()}</h3>
+              <h3 className="text-sm font-semibold text-foreground">{getPhaseTitle()}</h3>
               {currentPhase === "completed" && (
-                <Badge className="bg-green-600">Sistema Ativo</Badge>
+                <Badge variant="outline" className="border-primary text-primary">Sistema Ativo</Badge>
               )}
             </div>
             <Progress value={progress} className="h-2" />
           </div>
 
           {/* Resumo do Fluxo de Pagamento */}
-          <Card className="bg-slate-800/30 border-purple-500/30">
+          <Card className="border">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
-                <ArrowRight className="h-5 w-5 text-purple-400" />
-                Fluxo de Pagamento Híbrido
-              </CardTitle>
+              <CardTitle className="text-foreground">Fluxo de Pagamento Híbrido</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div className="bg-slate-700/50 rounded-lg p-3">
-                  <div className="text-gray-300 mb-1">Cliente Paga</div>
-                  <div className="font-semibold text-white">{paymentFlow.customerMethod}</div>
-                  <div className="text-2xl font-bold text-green-400 mt-2">
+                <div className="rounded border p-3">
+                  <div className="text-muted-foreground mb-1">Cliente Paga</div>
+                  <div className="text-foreground">{paymentFlow.customerMethod}</div>
+                  <div className="text-2xl font-bold text-foreground mt-2">
                     R$ {paymentFlow.amount.toFixed(2)}
                   </div>
                 </div>
-                
-                <div className="bg-slate-700/50 rounded-lg p-3">
-                  <div className="text-gray-300 mb-1">Comerciante Recebe</div>
-                  <div className="font-semibold text-white">{paymentFlow.merchantReceives}</div>
-                  <div className="text-2xl font-bold text-purple-400 mt-2">
+                <div className="rounded border p-3">
+                  <div className="text-muted-foreground mb-1">Comerciante Recebe</div>
+                  <div className="text-foreground">{paymentFlow.merchantReceives}</div>
+                  <div className="text-2xl font-bold text-foreground mt-2">
                     {(paymentFlow.amount - paymentFlow.fees).toFixed(2)}
                   </div>
                 </div>
-                
-                <div className="bg-slate-700/50 rounded-lg p-3">
-                  <div className="text-gray-300 mb-1">Rendimento APY</div>
-                  <div className="font-semibold text-white">Automático</div>
-                  <div className="text-2xl font-bold text-yellow-400 mt-2">
+                <div className="rounded border p-3">
+                  <div className="text-muted-foreground mb-1">Rendimento APY</div>
+                  <div className="text-foreground">Automático</div>
+                  <div className="text-2xl font-bold text-foreground mt-2">
                     {paymentFlow.apy}%
                   </div>
                 </div>
               </div>
-              
+
               {paymentFlow.escrowSequence && (
-                <div className="mt-4 p-3 bg-green-900/30 border border-green-500/30 rounded-lg">
-                  <div className="flex items-center gap-2 text-green-300">
-                    <Shield className="h-4 w-4" />
+                <div className="mt-4 rounded border p-3">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <Shield className="h-4 w-4 text-primary" />
                     <span className="text-sm font-mono">
                       Escrow Sequence: {paymentFlow.escrowSequence}
                     </span>
@@ -291,17 +278,17 @@ export default function PayhubDemo() {
 
           {/* Steps da Jornada */}
           <div className="space-y-3">
-            <h4 className="font-semibold text-purple-300">Jornada do Usuário</h4>
+            <h4 className="font-semibold text-foreground">Jornada do Usuário</h4>
             {steps.map((step, index) => (
-              <div key={step.id} className="flex items-center gap-4 p-3 bg-slate-800/30 rounded-lg">
+              <div key={step.id} className="flex items-center gap-4 p-3 rounded border">
                 <div className="flex-shrink-0">
                   {getStatusIcon(step.status)}
                 </div>
                 <div className="flex-1">
-                  <div className="font-medium">{step.title}</div>
-                  <div className="text-sm text-gray-300">{step.description}</div>
+                  <div className="font-medium text-foreground">{step.title}</div>
+                  <div className="text-sm text-muted-foreground">{step.description}</div>
                 </div>
-                <div className="text-xs text-gray-400">
+                <div className="text-xs text-muted-foreground">
                   {step.status === "completed" && "✓ Concluído"}
                   {step.status === "running" && "Em execução..."}
                   {step.status === "pending" && "Aguardando"}
@@ -312,64 +299,54 @@ export default function PayhubDemo() {
 
           {/* Botão de Controle */}
           <div className="flex justify-center">
-            <Button
-              onClick={runDemo}
-              disabled={isRunning}
-              className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3"
-            >
+            <Button onClick={runDemo} disabled={isRunning}>
               {isRunning ? (
                 <>
                   <Clock className="mr-2 h-4 w-4 animate-spin" />
                   Executando Demo...
                 </>
               ) : currentPhase === "completed" ? (
-                "🔄 Reiniciar Demo"
+                "Reiniciar Demo"
               ) : (
-                <>
-                  <Zap className="mr-2 h-4 w-4" />
-                  Iniciar Demo Completa
-                </>
+                "Iniciar Demo Completa"
               )}
             </Button>
           </div>
 
           {/* Benefícios do PAYHUB */}
           {currentPhase === "completed" && (
-            <Card className="bg-gradient-to-r from-green-900/30 to-purple-900/30 border-green-500/30">
+            <Card className="border">
               <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <TrendingUp className="h-5 w-5 text-green-400" />
-                  PAYHUB Transformou Seu Negócio
-                </CardTitle>
+                <CardTitle className="text-lg text-foreground">PAYHUB Transformou Seu Negócio</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
-                      <span>Liquidez Imediata: Recebimento à vista</span>
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span className="text-foreground">Liquidez Imediata: Recebimento à vista</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
-                      <span>Zero Risco de Crédito: Escrow trustless</span>
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span className="text-foreground">Zero Risco de Crédito: Escrow trustless</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-green-400" />
-                      <span>Taxas Reduzidas: XRPL custo quase zero</span>
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span className="text-foreground">Taxas Reduzidas: XRPL custo quase zero</span>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-400" />
-                      <span>Rendimento Automático: 5-8% APY</span>
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span className="text-foreground">Rendimento Automático: 5-8% APY</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-400" />
-                      <span>Abstração Total: Cliente não vê crypto</span>
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span className="text-foreground">Abstração Total: Cliente não vê crypto</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-purple-400" />
-                      <span>Flexibilidade: Parcelamento tradicional</span>
+                      <CheckCircle2 className="h-4 w-4 text-primary" />
+                      <span className="text-foreground">Flexibilidade: Parcelamento tradicional</span>
                     </div>
                   </div>
                 </div>

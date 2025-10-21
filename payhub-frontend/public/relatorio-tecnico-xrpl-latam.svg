@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Relatório Técnico: Soluções XRPL para LATAM">
+  <defs>
+    <style>
+      /* Paleta Minimalista Consistente */
+      .bg { fill: #ffffff; }
+      .primary { fill: #1a1a1a; }
+      .secondary { fill: #666666; }
+      .accent { fill: #0066cc; }
+      .xrpl-accent { fill: #23292f; }
+      .border { stroke: #e5e5e5; stroke-width: 1; fill: none; }
+      .card { fill: #fafafa; stroke: #e5e5e5; stroke-width: 1; rx: 8; }
+      .highlight-card { fill: #f0f8ff; stroke: #0066cc; stroke-width: 1; rx: 8; }
+      
+      /* Tipografia Consistente */
+      .title-main { 
+        fill: #1a1a1a; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 32px; 
+        font-weight: 700; 
+        text-anchor: middle; 
+      }
+      .title-section { 
+        fill: #1a1a1a; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 20px; 
+        font-weight: 600; 
+        text-anchor: start; 
+      }
+      .title-subsection { 
+        fill: #1a1a1a; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 16px; 
+        font-weight: 600; 
+        text-anchor: start; 
+      }
+      .text-body { 
+        fill: #666666; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 14px; 
+        font-weight: 400; 
+        text-anchor: start; 
+      }
+      .text-small { 
+        fill: #666666; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 12px; 
+        font-weight: 400; 
+        text-anchor: start; 
+      }
+      .text-accent { 
+        fill: #0066cc; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 14px; 
+        font-weight: 600; 
+        text-anchor: start; 
+      }
+      .text-center { text-anchor: middle; }
+      .text-author { 
+        fill: #666666; 
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+        font-size: 13px; 
+        font-weight: 400; 
+        text-anchor: middle; 
+        font-style: italic;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" x="0" y="0" width="1200" height="1400"/>
+  
+  <!-- Header -->
+  <text x="600" y="60" class="title-main">Relatório Técnico</text>
+  <text x="600" y="90" class="text-accent text-center">Soluções de Pagamento LATAM Utilizando a XRPL</text>
+  <text x="600" y="115" class="text-author">Autor: Diego Guedes da Silva</text>
+  <text x="600" y="135" class="text-small text-center">Destinatários: Equipe Vega Crypto e Participantes do Hackathon XRPL</text>
+  
+  <!-- Introdução -->
+  <rect class="card" x="80" y="170" width="1040" height="100"/>
+  <text x="100" y="200" class="title-section">Introdução</text>
+  <text x="100" y="225" class="text-body">Este relatório apresenta uma análise técnica sobre como a XRPL pode ser uma solução</text>
+  <text x="100" y="245" class="text-body">eficiente para os desafios de pagamentos na América Latina, explicando de forma clara</text>
+  <text x="100" y="265" class="text-body">como a tecnologia blockchain resolve problemas de lentidão, custos e inclusão financeira.</text>
+  
+  <!-- Desafios LATAM -->
+  <rect class="card" x="80" y="300" width="1040" height="140"/>
+  <text x="100" y="330" class="title-section">Desafios dos Pagamentos na LATAM</text>
+  <text x="100" y="355" class="text-body">A América Latina enfrenta obstáculos significativos:</text>
+  
+  <!-- Grid de desafios -->
+  <rect class="highlight-card" x="120" y="375" width="300" height="50"/>
+  <text x="140" y="395" class="text-accent">• Altas taxas</text>
+  <text x="140" y="415" class="text-small">Transações internacionais e remessas</text>
+  
+  <rect class="highlight-card" x="450" y="375" width="300" height="50"/>
+  <text x="470" y="395" class="text-accent">• Lentidão</text>
+  <text x="470" y="415" class="text-small">SWIFT leva dias para liquidação</text>
+  
+  <rect class="highlight-card" x="780" y="375" width="300" height="50"/>
+  <text x="800" y="395" class="text-accent">• Exclusão financeira</text>
+  <text x="800" y="415" class="text-small">Milhões sem acesso bancário</text>
+  
+  <!-- Por que XRPL -->
+  <rect class="card" x="80" y="470" width="1040" height="180"/>
+  <text x="100" y="500" class="title-section">Por Que a XRPL?</text>
+  <text x="100" y="525" class="text-body">A XRPL oferece soluções diretas para estes problemas:</text>
+  
+  <!-- Benefícios XRPL em grid -->
+  <rect class="card" x="120" y="545" width="220" height="80"/>
+  <text x="130" y="570" class="title-subsection">Velocidade</text>
+  <text x="130" y="590" class="text-body">Transações em</text>
+  <text x="130" y="610" class="text-accent">3-5 segundos</text>
+  
+  <rect class="card" x="360" y="545" width="220" height="80"/>
+  <text x="370" y="570" class="title-subsection">Custo Baixo</text>
+  <text x="370" y="590" class="text-body">Taxas mínimas</text>
+  <text x="370" y="610" class="text-accent">Frações de centavo</text>
+  
+  <rect class="card" x="600" y="545" width="220" height="80"/>
+  <text x="610" y="570" class="title-subsection">Descentralização</text>
+  <text x="610" y="590" class="text-body">Sem intermediários</text>
+  <text x="610" y="610" class="text-accent">Maior segurança</text>
+  
+  <rect class="card" x="840" y="545" width="220" height="80"/>
+  <text x="850" y="570" class="title-subsection">Escalabilidade</text>
+  <text x="850" y="590" class="text-body">Milhares de TPS</text>
+  <text x="850" y="610" class="text-accent">Alta capacidade</text>
+  
+  <!-- Casos de Uso -->
+  <rect class="card" x="80" y="680" width="1040" height="160"/>
+  <text x="100" y="710" class="title-section">Casos de Uso na LATAM</text>
+  
+  <text x="120" y="740" class="text-accent">• Remessas</text>
+  <text x="140" y="760" class="text-body">Migrantes enviam dinheiro para famílias com custo próximo a zero</text>
+  
+  <text x="120" y="785" class="text-accent">• Comércio Internacional</text>
+  <text x="140" y="805" class="text-body">Empresas liquidam pagamentos cross-border em tempo real</text>
+  
+  <text x="120" y="830" class="text-accent">• Inclusão Financeira</text>
+  <text x="140" y="850" class="text-body">Qualquer pessoa com internet acessa serviços via carteiras XRPL</text>
+  
+  <!-- Solução Proposta -->
+  <rect class="card" x="80" y="870" width="1040" height="180"/>
+  <text x="100" y="900" class="title-section">Solução Proposta</text>
+  <text x="100" y="925" class="text-body">Integrar a XRPL em três frentes principais:</text>
+  
+  <!-- Grid de soluções -->
+  <rect class="highlight-card" x="120" y="945" width="300" height="80"/>
+  <text x="130" y="970" class="title-subsection">Gateways de Pagamento</text>
+  <text x="130" y="990" class="text-small">Comerciantes aceitam XRP</text>
+  <text x="130" y="1010" class="text-small">e tokens XRPL</text>
+  
+  <rect class="highlight-card" x="450" y="945" width="300" height="80"/>
+  <text x="460" y="970" class="title-subsection">Parcerias Bancárias</text>
+  <text x="460" y="990" class="text-small">XRPL para liquidação</text>
+  <text x="460" y="1010" class="text-small">entre instituições</text>
+  
+  <rect class="highlight-card" x="780" y="945" width="300" height="80"/>
+  <text x="790" y="970" class="title-subsection">Aplicações DeFi</text>
+  <text x="790" y="990" class="text-small">Empréstimos e poupança</text>
+  <text x="790" y="1010" class="text-small">via smart contracts</text>
+  
+  <!-- Conclusão -->
+  <rect class="card" x="80" y="1060" width="1040" height="120"/>
+  <text x="100" y="1090" class="title-section">Conclusão</text>
+  <text x="100" y="1115" class="text-body">A XRPL não é apenas uma tecnologia inovadora, mas uma ferramenta prática para</text>
+  <text x="100" y="1135" class="text-body">resolver problemas reais na LATAM. Seu uso pode democratizar o acesso a serviços</text>
+  <text x="100" y="1155" class="text-body">financeiros, impulsionar o comércio e reduzir a dependência de sistemas obsoletos.</text>
+  
+  <!-- Próximos Passos -->
+  <rect class="card" x="80" y="1210" width="1040" height="120"/>
+  <text x="100" y="1240" class="title-section">Próximos Passos</text>
+  <text x="120" y="1265" class="text-accent">• Desenvolver proof-of-concepts (PoCs) durante o hackathon</text>
+  <text x="120" y="1285" class="text-accent">• Engajar reguladores para garantir conformidade</text>
+  <text x="120" y="1305" class="text-accent">• Educar o mercado sobre os benefícios da XRPL</text>
+  
+  <!-- Footer -->
+  <text x="600" y="1360" class="text-small text-center">Documento conciso com 2.900 caracteres • Focado em clareza e aplicação prática</text>
+  <text x="600" y="1380" class="text-small text-center">Hackathon XRPL Vega 2024 • Built on XRPL</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+    
+    <linearGradient id="gradient-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e40af" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Símbolo moderno de conexão/pagamento -->
+  <g transform="translate(10, 10)">
+    <!-- Círculo central -->
+    <circle cx="20" cy="20" r="15" fill="url(#gradient)" stroke="#ffffff" stroke-width="2" />
+    
+    <!-- Anéis concêntricos -->
+    <circle cx="20" cy="20" r="10" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8" />
+    <circle cx="20" cy="20" r="5" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.6" />
+    
+    <!-- Elementos de conexão -->
+    <line x1="35" y1="20" x2="45" y2="20" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="35" x2="20" y2="45" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" />
+    <line x1="5" y1="20" x2="15" y2="20" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="5" x2="20" y2="15" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" />
+    
+    <!-- Pontos de conexão -->
+    <circle cx="45" cy="20" r="2" fill="#3b82f6" />
+    <circle cx="20" cy="45" r="2" fill="#3b82f6" />
+    <circle cx="5" cy="20" r="2" fill="#3b82f6" />
+    <circle cx="20" cy="5" r="2" fill="#3b82f6" />
+  </g>
+  
+  <!-- Texto PAYHUB -->
+  <text x="60" y="35" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="700" fill="#1f2937">
+    PAYHUB
+  </text>
+  
+  <!-- Tagline -->
+  <text x="165" y="45" font-family="'Inter', 'Segoe UI', system-ui, sans-serif" font-size="10" font-weight="500" fill="#6b7280" text-anchor="end">
+    P4YHU3
+  </text>
+</svg>

@@ -1,166 +1,155 @@
-import PayhubDemo from "@/components/payhub-demo"
+import { PayhubDemo } from "@/components/payhub-demo"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Zap, Shield, TrendingUp, ArrowRight } from "lucide-react"
+import { Zap, Shield, TrendingUp, ArrowRight, Wallet, CreditCard, Coins, ArrowRightLeft } from "lucide-react"
+import { HubAIAgent } from "@/components/hub-ai-agent"
+import { TransactionSimulator } from "@/components/transaction-simulator"
 
 export default function DemoPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="bg-purple-600/20 p-3 rounded-full">
-              <Zap className="h-8 w-8 text-purple-400" />
-            </div>
-            <h1 className="text-4xl font-bold text-white">
-              Teste de Conexão Simulada
-            </h1>
-          </div>
-          <p className="text-xl text-purple-200 max-w-3xl mx-auto">
-            Demonstração do PAYHUB como Agente de Gestão de Liquidez Ativa - 
-            Transformando complexidade em simplicidade
+          <Badge variant="secondary" className="mb-3">
+            <Shield className="mr-1 h-3 w-3" />
+            Demo Test • Journey Overview
+          </Badge>
+          <h1 className="text-4xl font-bold text-foreground">
+            Teste de Conexão Simulado
+          </h1>
+          <p className="mt-3 text-lg text-muted-foreground max-w-3xl mx-auto">
+            Demonstração da Jornada Fluida do Agente de Gestão de Liquidez Ativa —
+            extensão visual e UX da Home.
           </p>
         </div>
 
-        {/* Benefícios em Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="bg-slate-800/50 border-purple-500/30">
+        {/* Fases da Jornada */}
+        <div className="grid gap-6 md:grid-cols-3 mb-12">
+          {/* Fase 1 */}
+          <Card className="border-2 border-primary/20">
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <Shield className="h-6 w-6 text-purple-400" />
-                <CardTitle className="text-white">Segurança Trustless</CardTitle>
+              <div className="flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <Wallet className="h-5 w-5 text-primary" />
+                </div>
+                <Badge variant="secondary">Fase 1: Configuração e Ativação</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-purple-200">
-                XRPL Escrow garante que fundos sejam bloqueados e liberados 
-                apenas após confirmação do serviço
-              </CardDescription>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Onboarding simplificado: carteira XRPL segura e fundeada (rMERCHANT_…)</li>
+                <li>• Ativação Tesouraria Ativa e Auto‑Yield 5–8% APY</li>
+                <li>• Integração única: API Key ou Widget plug‑and‑play</li>
+                <li><code className="text-xs">POST /api/v1/merchant/yield/activate</code></li>
+                <li>• API Gateway (HUB)</li>
+              </ul>
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-800/50 border-purple-500/30">
+          {/* Fase 2 */}
+          <Card className="border-2 border-primary/20">
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <TrendingUp className="h-6 w-6 text-green-400" />
-                <CardTitle className="text-white">Rendimento Automático</CardTitle>
+              <div className="flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <CreditCard className="h-5 w-5 text-primary" />
+                </div>
+                <Badge variant="secondary">Fase 2: Pagamento Híbrido</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-purple-200">
-                Capital de giro gera 5-8% APY automaticamente através 
-                de protocolos DeFi na XRPL Sidechain
-              </CardDescription>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Cliente paga: Cartão 10x ou PIX (R$)</li>
+                <li>• Conversão Fiat → RLUSD com privacidade em 1º lugar</li>
+                <li>• Escrow trustless: bloqueio on‑chain em RLUSD</li>
+                <li><code className="text-xs">POST /escrow/rlusd/create</code> • <code className="text-xs">POST /escrow/rlusd/finish</code></li>
+                <li><code className="text-xs">POST /simulate/hybrid</code></li>
+              </ul>
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-800/50 border-purple-500/30">
+          {/* Fase 3 */}
+          <Card className="border-2 border-primary/20">
             <CardHeader>
-              <div className="flex items-center gap-3">
-                <ArrowRight className="h-6 w-6 text-blue-400" />
-                <CardTitle className="text-white">Abstração Total</CardTitle>
+              <div className="flex items-center gap-2">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                  <TrendingUp className="h-5 w-5 text-primary" />
+                </div>
+                <Badge variant="secondary">Fase 3: Valor Agregado</Badge>
               </div>
             </CardHeader>
             <CardContent>
-              <CardDescription className="text-purple-200">
-                Cliente paga com métodos tradicionais, comerciante recebe 
-                em crypto - complexidade totalmente oculta
-              </CardDescription>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <div>• Crescimento do capital de giro (mXRP na EVM Sidechain, 5–8% APY)</div>
+                <div>• Saldo RLUSD Base: 10.000,00 • Rendimento (6,5% APY): +54,17 • Total: 10.054,17</div>
+                <div><code className="text-xs">POST /api/v1/merchant/yield/allocate</code></div>
+                <div>• Abstração cripto • Segurança XRPL Escrow • Liquidez imediata (~R$0,0001)</div>
+                <div>• HUB AI — Agente PAYHUB: otimiza lucros 24/7</div>
+              </div>
             </CardContent>
           </Card>
         </div>
 
+        {/* Agente Premium: Rendimento DeFi */}
+        <Card className="border-2 border-primary/20 mb-12">
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
+                <Coins className="h-5 w-5 text-primary" />
+              </div>
+              <Badge variant="secondary">Agente Premium: Rendimento DeFi</Badge>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground mb-4">
+              Consultoria embutida por porte (PMEs: foco em volume e margem).
+              Resolva dinheiro parado e ative Auto‑Yield para transformar fluxo de caixa em rendimento.
+            </p>
+            {/* Widget de ativação com Merchant ID/Saldo/Segmento */}
+            <HubAIAgent />
+          </CardContent>
+        </Card>
+
         {/* Componente Principal de Demo */}
-        <PayhubDemo />
+        <section className="container mx-auto max-w-5xl space-y-8">
+          {/* Jornada PAYHUB */}
+          <PayhubDemo />
 
-        {/* Informações Técnicas */}
-        <div className="mt-8 space-y-6">
-          <Card className="bg-slate-800/30 border-purple-500/30">
-            <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <Zap className="h-5 w-5 text-purple-400" />
-                Arquitetura PAYHUB
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-purple-300">Endpoints Implementados</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <code className="text-green-400">POST /api/v1/merchant/yield/activate</code>
-                      <Badge variant="outline" className="text-green-400 border-green-400">Ativo</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <code className="text-blue-400">POST /escrow/rlusd/create</code>
-                      <Badge variant="outline" className="text-blue-400 border-blue-400">Ativo</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <code className="text-purple-400">POST /escrow/rlusd/finish</code>
-                      <Badge variant="outline" className="text-purple-400 border-purple-400">Ativo</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <code className="text-yellow-400">POST /simulate/hybrid</code>
-                      <Badge variant="outline" className="text-yellow-400 border-yellow-400">Ativo</Badge>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="space-y-3">
-                  <h4 className="font-semibold text-purple-300">Componentes Frontend</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">PaymentOrchestrator</span>
-                      <Badge variant="outline" className="text-gray-400">Integrado</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">XRPLSimulator</span>
-                      <Badge variant="outline" className="text-gray-400">Integrado</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Escrow Monitor</span>
-                      <Badge variant="outline" className="text-gray-400">Integrado</Badge>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-300">Yield Manager</span>
-                      <Badge variant="outline" className="text-gray-400">Integrado</Badge>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Simulador */}
+          <div className="mt-8">
+            <TransactionSimulator />
+          </div>
+        </section>
 
-          {/* Métricas do Sistema */}
-          <Card className="bg-gradient-to-r from-green-900/20 to-purple-900/20 border-green-500/30">
-            <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-green-400" />
-                Benefícios Comprovados
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div className="bg-slate-800/50 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-green-400">0%</div>
-                  <div className="text-sm text-gray-300">Risco de Crédito</div>
-                </div>
-                <div className="bg-slate-800/50 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-purple-400">R$0.0001</div>
-                  <div className="text-sm text-gray-300">Custo por Transação</div>
-                </div>
-                <div className="bg-slate-800/50 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-blue-400">D+0</div>
-                  <div className="text-sm text-gray-300">Liquidação</div>
-                </div>
-                <div className="bg-slate-800/50 rounded-lg p-4">
-                  <div className="text-2xl font-bold text-yellow-400">5-8%</div>
-                  <div className="text-sm text-gray-300">APY Automático</div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Benefícios Comprovados */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold text-foreground mb-4">Benefícios Comprovados</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Card>
+              <CardContent className="pt-6 text-center">
+                <div className="text-2xl font-bold">0%</div>
+                <div className="text-sm text-muted-foreground">Risco de Crédito</div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6 text-center">
+                <div className="text-2xl font-bold">R$0.0001</div>
+                <div className="text-sm text-muted-foreground">Custo por Transação</div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6 text-center">
+                <div className="text-2xl font-bold">D+0</div>
+                <div className="text-sm text-muted-foreground">Liquidação</div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardContent className="pt-6 text-center">
+                <div className="text-2xl font-bold">5-8%</div>
+                <div className="text-sm text-muted-foreground">APY Automático</div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </div>

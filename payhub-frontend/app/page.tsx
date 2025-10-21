@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { ArrowRight, Shield, Zap, Globe, Lock, Wallet, CreditCard, Coins, ArrowRightLeft } from "lucide-react"
+import { AgentWidget } from "@/components/agent-widget"
 
 export default function HomePage() {
   return (
@@ -228,7 +229,7 @@ export default function HomePage() {
               <span className="text-sm font-medium text-muted-foreground">PAYHUB © 2025 - Payment Simulation</span>
             </div>
             <div className="flex items-center gap-6">
-              <Link href="/docs" className="text-sm text-muted-foreground hover:text-foreground">
+              <Link href="/documentation" className="text-sm text-muted-foreground hover:text-foreground">
                 Documentation
               </Link>
               <Link href="/merchant" className="text-sm text-muted-foreground hover:text-foreground">
@@ -242,6 +243,8 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      {/* Agent Widget */}
+      <AgentWidget />
     </div>
   )
 }
