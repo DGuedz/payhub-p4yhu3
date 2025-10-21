@@ -37,3 +37,19 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+# Build e locais
+.next
+node_modules
+.expo
+ios/
+payhub-frontend/.next
+backend/node_modules
+mobile/.expo
+payhub-frontend/Produtos Financeiros PAYHUB para Comerciantes
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

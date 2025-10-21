@@ -7,6 +7,14 @@
   ],
   "scripts": {
     "vercel-build": "pnpm -C payhub-frontend run build",
-    "vercel-dev": "pnpm -C payhub-frontend run dev"
+    "vercel-dev": "pnpm -C payhub-frontend run dev",
+    "android": "expo run:android",
+    "ios": "expo run:ios"
+  },
+  "version": "1.0.0",
+  "dependencies": {
+    "expo": "~54.0.13",
+    "react": "19.1.0",
+    "react-native": "0.81.4"
   }
 }
