@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm -C payhub-frontend run build",
-  "installCommand": "pnpm -C payhub-frontend install",
-  "framework": "nextjs",
-  "outputDirectory": "payhub-frontend/.next"
+	"buildCommand": "pnpm -C payhub-frontend run build",
+	"installCommand": "pnpm -C payhub-frontend install",
+	"framework": "nextjs",
+	"outputDirectory": "payhub-frontend/.next"
 }
