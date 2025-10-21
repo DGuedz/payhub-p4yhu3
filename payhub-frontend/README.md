@@ -28,3 +28,21 @@ Continue building your app on:
 2. Deploy your chats from the v0 interface
 3. Changes are automatically pushed to this repository
 4. Vercel deploys the latest version from this repository
+
+## Deploy & Submissão (Hackathon)
+
+- Projeto Vercel: **payhub-p4yhu3-cs**
+- Root Directory: `payhub-frontend`
+- Envs (Produção):
+  - `NEXT_PUBLIC_BACKEND_URL=https://SEU_BACKEND_PUBLICO`
+  - `NEXT_PUBLIC_PROJECT_ID=SEU_WALLETCONNECT_PROJECT_ID`
+  - `XRPL_WS_URL=wss://s.altnet.rippletest.net:51233/`
+  - `XRPL_FAUCET_URL=https://faucet.altnet.rippletest.net/accounts`
+
+### Passos de Deploy (Vercel)
+1. Em “payhub-p4yhu3-cs”, verifique `Root Directory = payhub-frontend`.
+2. Adicione/atualize as variáveis acima em “Settings → Environment Variables”.
+3. Redeploy o projeto. Vercel fará o build e publicará automaticamente.
+
+### Configuração Local
+Crie `payhub-frontend/.env.local`:
